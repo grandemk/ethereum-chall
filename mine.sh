@@ -14,7 +14,12 @@ mine()
 
 	local -r dataDir=$1
 	local -r networkId=$2
-	geth --mine --rpc --networkid "$networkId" --datadir "$dataDir"
+	geth --mine \
+             --rpc \
+             --networkid "$networkId"\
+             --datadir "$dataDir"\
+	     --rpccorsdomain "http://localhost:8000"\
+
 }
 
 main()
