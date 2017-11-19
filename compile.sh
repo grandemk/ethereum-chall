@@ -1,2 +1,2 @@
 #!/bin/bash
-solc Bounty.sol --bin --abi
+solc "$1" --bin --abi
