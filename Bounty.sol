@@ -37,6 +37,10 @@ contract Bounty{
         return solved[chall];
     }
 
+    function get_chall(address chall) returns (bytes32) {
+	    return challs[chall];
+    }
+
     function add_bounty(uint reward, bytes32 chall) payable  public{
         require(msg.value <= reward);
         require(rewards[msg.sender]== 0);
