@@ -1,0 +1,3 @@
+[submodule "CreatePrivateEthereum"]
+	path = CreatePrivateEthereum
+	url = https://github.com/regispietra/CreatePrivateEthereum
