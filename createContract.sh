@@ -10,4 +10,6 @@ echo "admin.sleepBlocks(2)"
 echo "miner.stop()"
 
 echo "tx = eth.getTransactionReceipt(${name}.transactionHash)"
+echo "console.log(\"${name} transaction receipt:\")"
+echo "inspect(tx)"
 echo "${name} = ${name}Contract.at(tx.contractAddress)"

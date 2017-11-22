@@ -6,7 +6,7 @@ attach()
 
 main()
 {
-	local -r dataDir="./my_block_chain"
+	local -r dataDir="./private_ethereum_blockchain"
 	mkdir -p $dataDir
 	attach $dataDir
 }

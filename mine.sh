@@ -19,14 +19,19 @@ mine()
              --networkid "$networkId"\
              --datadir "$dataDir"\
 	     --rpccorsdomain "http://localhost:8000"\
+	     --nodiscover \
+	     --nat none \
+	     --minerthreads 1
+	     --ipcpath "$dataDir/geth.ipc"
+	     --rpsport 8545\
 
 }
 
 main()
 {
-	local -r dataDir="./my_block_chain"
+	local -r dataDir="./private_ethereum_blockchain"
 	mkdir -p $dataDir
-	local -r networkId=1999
+	local -r networkId=100
 	mine $dataDir $networkId
 }
 
