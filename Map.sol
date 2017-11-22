@@ -17,21 +17,11 @@ contract Map {
 	//	solved[msg.sender] = false;
 	}
 
-/*
 	function get_solved(address chall) public view returns(bool) {
 		return solved[chall];
 	}
-	*/
 
 	function get_reward(address addr) public view returns(uint) {
-		return rewards[addr];
-	}
-
-	function get_reward2(address addr) public view returns(uint) {
-		return rewards[addr];
-	}
-
-	function get_reward3(address addr) public view returns(uint) {
 		return rewards[addr];
 	}
 
