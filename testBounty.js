@@ -1,6 +1,6 @@
 personal.unlockAccount(eth.coinbase, "")
 
-var win_event = bounty.Win()
+var win_event = Bounty.Win()
 win_event.watch(function(error, result) {
 	if(error) {
 		console.log("win event error");
@@ -11,7 +11,7 @@ win_event.watch(function(error, result) {
 	console.log("got Win event !");
 });
 
-bounty.win.sendTransaction({from: eth.coinbase, gas:300000})
+Bounty.win.sendTransaction({from: eth.coinbase, gas:300000})
 
 console.log("start mining")
 miner.start(8)
