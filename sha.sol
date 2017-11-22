@@ -1,8 +1,8 @@
 pragma solidity ^0.4.16;
 
-contract sha256Calculator {
-	function sha(bytes32 str) pure public returns(bytes32) {
-		bytes32 hash = sha256(str);
-		return hash;
+contract sha {
+	function hash(bytes32 str) pure public returns(bytes32) {
+		bytes32 hash256 = sha256(str);
+		return hash256;
 	}
 }
