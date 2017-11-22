@@ -11,14 +11,25 @@ console.log("initial balance of Bounty smart contract is :" + bountyInitialBalan
 
 hashA="0x037371bf62c8a2c23f8134fc2c7049fbe698860b888c98b955644c4b8f8f3155"
 
-Bounty.add_bounty.sendTransaction(bountyInitialBalance + 1, hashA, {from:eth.coinbase, value: 1})
+reward = (bountyInitialBalance.plus(1))
+console.log("reward : ", reward)
+reward = reward.plus(bountyInitialBalance.modulo(2))
+console.log("reward : ", reward)
+Bounty.add_bounty.sendTransaction(reward , hashA, {from:eth.coinbase, value: 1})
+
+miner.start(1)
+admin.sleepBlocks(4)
+miner.stop()
 
 reward = Bounty.get_reward.call(eth.coinbase)
 chall = Bounty.get_chall.call(eth.coinbase)
-
-console.log("chall: " + chall + "for " + reward)
+console.log("chall: " + chall + " for (" + reward + ") E")
 
 Bounty.bounty_solve.sendTransaction(eth.coinbase, "A", {from:eth.coinbase})
+miner.start(1)
+admin.sleepBlocks(4)
+miner.stop()
+
 Bounty.remove_bounty.sendTransaction({from:eth.coinbase})
 
 miner.start(1)
