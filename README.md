@@ -45,7 +45,7 @@ which means you can send a transaction where you pay 1 Wei and the reward can be
 
 You can then solve your own bounty and get all the money of the contract !
 
-See testBounty.js to see how this can be used to get all the money of the smart contract.
+See [testBounty.js](testBounty.js) to see how this can be used to get all the money of the smart contract.
 
 One small gotcha is that the bounty sovle function get a bytes32 (which means a string of 32 bytes padded with 0 if needed)
 So calling sha256sum on a string like 'A' won't give you the same answer than what the bounty_solve except. To fix that, I created the sha.sol contract which
