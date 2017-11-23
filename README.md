@@ -31,11 +31,15 @@ The logical hole in this smart contract is that when you add a bounty, you speci
 There are some require (assert) that try to limit the reward value but they are false.
 
 what should be done:
+```javascript
 require(msg.value >= reward)
+```
 
 what is done:
+```javascript
 require(msg.value > 0)
 require(msg.value <= reward)
+```
 
 which means you can send a transaction where you pay 1 Wei and the reward can be what you want.
 
